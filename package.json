@@ -1,0 +1,57 @@
+{
+  "name": "csv-upload",
+  "version": "0.0.1",
+  "description": "CSV upload experimentation",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress --content-base dist/",
+    "build": "webpack --progress",
+    "test": "jest"
+  },
+  "author": "Kai Moseley",
+  "license": "ISC",
+  "jest": {
+    "testPathDirs": [
+      "<rootDir>/src"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "modulePaths": [
+      "/src"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^6.1.2",
+    "babel-jest": "^17.0.2",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-flow-strip-types": "^6.14.0",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.24.0",
+    "eslint": "^3.2.2",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-flowtype": "^2.18.1",
+    "eslint-plugin-react": "^6.0.0",
+    "node-sass": "^3.8.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "dependencies": {
+    "global": "^4.3.1",
+    "lodash": "^4.17.2",
+    "redux": "^3.6.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
