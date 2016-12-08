@@ -25,6 +25,7 @@ module.exports = {
         'react/prop-types': ['off'],
         'react/display-name': ['off'],
         'no-console': ['off'],
+
     },
     env: {
         browser: true,
