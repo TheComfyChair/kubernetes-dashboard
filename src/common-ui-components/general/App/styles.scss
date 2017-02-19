@@ -1,0 +1,8 @@
+.app {
+    composes: colors from 'css/colors';
+    background-color: var(--primary-color);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,47 +1,20 @@
-const webpack = require('webpack');
-const path = require('path');
+const webpackMerge = require('webpack-merge');
 
-const PATH_ESLINT = path.join(__dirname, '.eslintrc.js');
-const PATH_SRC = path.join(__dirname, 'src');
+const baseConfig = require('./webpack/base.config');
 
-module.exports = {
-    context: __dirname,
-    entry: {
-        'test': PATH_SRC
-    },
-    devServer: {
-        inline: true,
-    },
-    output: {
-        path: path.join(__dirname, 'dist'),
-        filename: '[name].bundle.js',
-    },
-    eslint: {
-        configFile: PATH_ESLINT,
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.(js|jsx)$/,
-                include: [PATH_SRC],
-                exclude: [],
-                loader: "babel-loader",
-            },
-        ],
-        preLoaders: [ { test: /\.js$/, include: [PATH_SRC], loader: 'eslint-loader' } ]
-    },
-    resolve: {
-        extensions: ['', '.js', '.json', '.jsx'],
-        alias: [
-            { 'shell-game': PATH_SRC }
-        ],
-    },
-    plugins: [
-        function () {
-            this.plugin('done', () =>
-                setTimeout(() => console.log('\nFinished at ' + (new Date).toLocaleTimeString() + '\n'), 10)
-            );
-        },
-        new webpack.HotModuleReplacementPlugin(),
-    ]
+
+module.exports = ({
+  env = 'dev',
+  staticDir = '',
+} = {}) => {
+  console.log(`📦  Transpiling for ${env}...`);
+  return webpackMerge(
+    baseConfig({
+      location: __dirname,
+      staticDir,
+    }),
+    require(`./webpack/${env}.config`)({
+      location: __dirname,
+      staticDir,
+    }));
 };

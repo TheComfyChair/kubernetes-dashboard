@@ -1,0 +1,13 @@
+.container {
+  composes: paddings from 'css/paddings';
+  composes: shadows from 'css/shadows';
+  composes: colors from 'css/colors';
+
+  width: 100%;
+  padding: var(--standard-padding) var(--double-padding) 0;
+  display: flex;
+  justify-content: center;
+  box-shadow: var(--fuzzy-large);
+  background-color: var(--secondary-color);
+  box-sizing: border-box;
+}

@@ -1,4 +1,24 @@
 {
-  "presets": ["react"],
-  "plugins": ["transform-es2015-modules-commonjs", "transform-object-rest-spread", "transform-flow-strip-types"]
+  "presets": [
+    "react",
+    "es2015"
+  ],
+  "plugins": [
+    "transform-es2015-modules-commonjs",
+    "transform-object-rest-spread",
+    "transform-flow-strip-types",
+    "transform-class-properties",
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "utils": "/utils",
+        "css": "/assets/css/",
+        "images": "/assets/images",
+        "hello-world": "/modules/hello-world",
+        "application-root": "/modules/application-root",
+        "common-ui-components": "/common-ui-components",
+      },
+      "extensions": ["", ".js", ".json", ".jsx", ".css", ".scss", ".svg"]
+    }]
+  ]
 }

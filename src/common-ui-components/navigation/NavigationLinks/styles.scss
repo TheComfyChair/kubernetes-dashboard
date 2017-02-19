@@ -1,0 +1,60 @@
+.container {
+  composes: margins from 'css/margins';
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 var(--standard-margin) var(--half-margin);
+}
+
+.title {
+  composes: fonts from 'css/fonts';
+  composes: font-weights from 'css/fonts';
+  composes: font-sizes from 'css/fonts';
+  composes: font-colors from 'css/colors';
+  composes: paddings from 'css/paddings';
+  composes: margins from 'css/margins';
+
+  margin-bottom: var(--half-margin);
+  padding: 0 var(--standard-padding) var(--quarter-padding);
+  font-size: var(--s-font-size);
+  font-weight: var(--thin-font-weight);
+  color: var(--primary-font-color);
+  border-bottom: 1px solid var(--secondary-border-line-color);
+  font-family: var(--primary-font-family);
+  opacity: 0.7;
+  cursor: default;
+}
+
+.link {
+  composes: fonts from 'css/fonts';
+  composes: font-weights from 'css/fonts';
+  composes: font-sizes from 'css/fonts';
+  composes: font-colors from 'css/colors';
+  composes: paddings from 'css/paddings';
+  composes: timings from 'css/animation';
+
+  text-decoration: none;
+  color: var(--primary-font-color);
+  font-family: var(--primary-font-family);
+  font-weight: var(--thin-font-weight);
+  font-size: var(--s-font-size);
+  padding: var(--quarter-padding);
+  opacity: 0.5;
+  transition: opacity var(--std-animation-duration);
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.active-link {
+  composes: link;
+
+  opacity: 1;
+
+  &:hover {
+    opacity: 1;
+  }
+}

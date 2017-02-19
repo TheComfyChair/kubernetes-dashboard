@@ -1,0 +1,27 @@
+.container {
+  composes: paddings from 'css/paddings';
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: calc(var(--double-padding) * 4);
+}
+
+.logo {
+  composes: margins from 'css/margins';
+
+  margin-bottom: calc(var(--double-margin) * 2);
+  width: 35rem;
+}
+
+.message {
+  composes: fonts from 'css/fonts';
+  composes: font-sizes from 'css/fonts';
+  composes: font-colors from 'css/colors';
+  composes: font-weights from 'css/fonts';
+
+  color: var(--primary-font-color);
+  font-size: var(--l-font-size);
+  font-weight: var(--thin-font-weight);
+  font-family: var(--primary-font-family);
+}
