@@ -21,18 +21,6 @@ export const Navbar = (props: NavbarProps) =>
       className={ styles.container }
       data-test-primary-nav
     >
-      <div
-        className={ styles.logo }
-        data-test-primary-logo
-      >
-        <NavLink to={ props.logoLink }>
-          <img
-            src="/images/small_onfido_logo.svg"
-            alt="Onfido logo"
-          />
-        </NavLink>
-      </div>
-
       <div className={ styles.links }>
       { props.modules.map(module =>
         <NavLink
@@ -50,24 +38,6 @@ export const Navbar = (props: NavbarProps) =>
         >
           { module.title }
         </NavLink>) }
-      </div>
-
-      <div
-        className={ styles.logout }
-        data-test-logout
-      >
-        <div className={ styles['user-name'] }> Example user </div>
-        <div className={ styles['user-image'] }>
-          <img
-            src="/images/small_onfido_logo.svg"
-            alt="Onfido logo"
-          />
-        </div>
-        <img
-          className={ styles.options }
-          src="/images/arrow.svg"
-          alt="User options"
-        />
       </div>
     </nav>
   </header>;

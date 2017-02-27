@@ -3,7 +3,7 @@ import { USER_DETAILS_REDUCER } from './constants';
 
 
 const userDetailsSchema = Types.reducer(Types.shape({
-  name: Types.string(),
+  name: Types.string('react-app-skeleton'),
 }));
 
 

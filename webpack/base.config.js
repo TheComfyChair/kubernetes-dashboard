@@ -9,7 +9,7 @@ module.exports = ({
 } = {}) => ({
   context: location,
   entry: {
-    ims: path.join(location, 'src'),
+    'react-app': path.join(location, 'src'),
     vendor: [
       'react',
       'react-dom',
@@ -75,8 +75,8 @@ module.exports = ({
       names: ['vendor', 'manifest'],
     }),
     new HtmlWebpackPlugin({
-      title: 'Onfido IMS',
-      template: path.join(location, 'webpack', 'ims-index.ejs'),
+      title: 'React example app',
+      template: path.join(location, 'webpack', 'index.ejs'),
     }),
     new ManifestPlugin(),
   ]

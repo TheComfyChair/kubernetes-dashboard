@@ -1,0 +1,10 @@
+.paddings {
+    /* All paddings should follow the border-box box-sizing functionality */
+    box-sizing: border-box;
+
+    --standard-padding: 1rem;
+    --half-padding: calc(var(--standard-padding) / 2);
+    --quarter-padding: calc(var(--standard-padding) / 4);
+    --eighth-padding: calc(var(--standard-padding) / 8);
+    --double-padding: calc(var(--standard-padding) * 2);
+}

@@ -1,0 +1,7 @@
+.margins {
+    --standard-margin: 1rem;
+    --half-margin: calc(var(--standard-margin) / 2);
+    --quarter-margin: calc(var(--standard-margin) / 4);
+    --eighth-margin: calc(var(--standard-margin) / 8);
+    --double-margin: calc(var(--standard-margin) * 2);
+}

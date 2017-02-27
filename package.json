@@ -1,11 +1,11 @@
 {
-  "name": "csv-upload",
+  "name": "react-experiment-starter",
   "version": "0.0.1",
-  "description": "CSV upload experimentation",
+  "description": "React experiment starter",
   "main": "index.js",
   "scripts": {
-    "build-dev": "webpack --env.env=dev --env.staticDir=ims --progress --watch --colors",
-    "build": "webpack --env.env=prod --env.staticDir=ims --progress --colors",
+    "build-dev": "webpack --env.env=dev --progress --watch --colors",
+    "build": "webpack --env.env=prod --progress --colors",
     "test": "jest",
     "start": "node_modules/.bin/webpack-dev-server"
   },

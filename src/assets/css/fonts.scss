@@ -1,0 +1,27 @@
+/* @import "./fonts/open_sans.css"; */
+
+/* Font stacks */
+.fonts {
+    --primary-font-family: 'Open Sans', sans-serif;
+}
+
+.font-sizes {
+    --std-font-size: 1rem;
+
+    --xxs-font-size: calc(var(--std-font-size) * 0.625);
+    --xs-font-size: calc(var(--std-font-size) * 0.75);
+    --s-font-size: calc(var(--std-font-size) * 0.875);
+    --l-font-size: calc(var(--std-font-size) * 1.25);
+    --xl-font-size: calc(var(--std-font-size) * 1.375);
+    --xxl-font-size: calc(var(--std-font-size) * 1.5);
+
+    --form-font-size: var(--s-font-size);
+}
+
+.font-weights {
+    --std-font-weight: 400;
+
+    --thin-font-weight: 300;
+    --heavy-font-weight: 500;
+}
+

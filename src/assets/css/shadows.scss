@@ -1,0 +1,12 @@
+.shadows {
+  composes: colors from 'css/colors';
+
+  --fuzzy-light: 0 0 4px 0 var(--standard-shadow-color);
+  --fuzzy-medium: 0 0 7px 0 var(--standard-shadow-color);
+  --fuzzy-medium-bottom-only: 0 4px 7px -4px  var(--standard-shadow-color);
+  --slight-shadow: 0 0 1px 0 var(--standard-shadow-color);
+  --fuzzy-large: 0 0 11px 2px var(--standard-shadow-color);
+  --sharp-light: 0 0 2px 1px var(--standard-shadow-color);
+
+  --highlight-glow: 0 0 7px 0 var(--highlight-color);
+}

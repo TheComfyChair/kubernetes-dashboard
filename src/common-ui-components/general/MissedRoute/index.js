@@ -12,11 +12,6 @@ export const MissedRoute = (props: Props) =>
     className={ styles.container }
     data-test-missed-route
   >
-    <img
-      className={ styles.logo }
-      src="/images/ims_logo.svg"
-      alt="Onfido IMG logo"
-    />
     { (!props.children || props.message) &&
       <p className={ styles.message }>
         { props.message || "Oops! That page doesn't exist! :(" }

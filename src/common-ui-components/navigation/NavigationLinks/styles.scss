@@ -1,5 +1,11 @@
 .container {
+  composes: fonts from 'css/fonts';
+  composes: font-weights from 'css/fonts';
+  composes: font-sizes from 'css/fonts';
+  composes: font-colors from 'css/colors';
+  composes: paddings from 'css/paddings';
   composes: margins from 'css/margins';
+  composes: timings from 'css/animation';
 
   display: flex;
   flex-direction: column;
@@ -8,13 +14,6 @@
 }
 
 .title {
-  composes: fonts from 'css/fonts';
-  composes: font-weights from 'css/fonts';
-  composes: font-sizes from 'css/fonts';
-  composes: font-colors from 'css/colors';
-  composes: paddings from 'css/paddings';
-  composes: margins from 'css/margins';
-
   margin-bottom: var(--half-margin);
   padding: 0 var(--standard-padding) var(--quarter-padding);
   font-size: var(--s-font-size);
@@ -27,13 +26,6 @@
 }
 
 .link {
-  composes: fonts from 'css/fonts';
-  composes: font-weights from 'css/fonts';
-  composes: font-sizes from 'css/fonts';
-  composes: font-colors from 'css/colors';
-  composes: paddings from 'css/paddings';
-  composes: timings from 'css/animation';
-
   text-decoration: none;
   color: var(--primary-font-color);
   font-family: var(--primary-font-family);

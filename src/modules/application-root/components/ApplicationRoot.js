@@ -9,8 +9,9 @@ import {
   BrowserRouter,
   Route,
   Switch,
+  Redirect,
 } from 'react-router-dom';
-import helloWorld from 'tools';
+import helloWorld from 'hello-world';
 
 import styles from './styles.scss';
 
@@ -21,7 +22,7 @@ const ROUTES = [
   },
 ];
 
-export const ApplicationRoot = (props: { signoutUrl: string }) =>
+export const ApplicationRoot = () =>
   <BrowserRouter>
     <App>
       <Navigation
@@ -32,6 +33,12 @@ export const ApplicationRoot = (props: { signoutUrl: string }) =>
             clickable: helloWorld.route.clickable,
           },
         ]}
+      />
+
+      <Route
+        pattern="/"
+        exact
+        component={ () => <Redirect to={ helloWorld.route.link } /> }
       />
 
       <main className={ styles.content }>
