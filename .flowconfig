@@ -9,6 +9,8 @@ module.name_mapper='.+\.s?css' -> 'CSSModule'
 module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=src
 module.system.node.resolve_dirname=src/modules/
+module.system.node.resolve_dirname=src/modules/tools/modules/
+module.system.node.resolve_dirname=src/assets/
 module.system=haste
 
 module.file_ext=.css

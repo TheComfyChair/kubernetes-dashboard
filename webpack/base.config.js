@@ -57,12 +57,19 @@ module.exports = ({
           'postcss-loader',
         ]
       },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        loaders: [
+          'file-loader',
+          'image-webpack-loader'
+        ]
+      }
     ],
   },
   resolve: {
-    extensions: ['.js', '.json', '.jsx', '.css', '.scss', '.svg'],
+    extensions: ['.js', '.json', '.jsx', '.css', '.scss', '.svg', '.png', '.jpg', 'jpeg', '.gif'],
     alias: {
-      css: path.join(path.join(location, 'src'), 'assets/css'),
+      css: path.join(path.join(location, 'src'), '/assets/css'),
       images: path.join(path.join(location, 'src'), '/assets/images'),
     }
   },

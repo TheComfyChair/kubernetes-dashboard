@@ -8,8 +8,8 @@ import {
 export type Props = {
   to: string,
   children?: ReactClass<any>,
-  activeClassName: string,
-  className: string,
+  activeClassName?: string,
+  className?: string,
   onClick?: (event: Event) => void,
 };
 

@@ -6,18 +6,22 @@ import { NavigationGroup } from '../NavigationGroup';
 import styles from './styles.scss';
 
 
+export type SubModule = {
+  title: string,
+  subModuleLinks: {
+    label: string,
+    link: string,
+  }[],
+}
+
 export type Module = {
   title: string,
   link: string,
   clickable: boolean,
-  subModules: {
-    title: string,
-    subModuleLinks: {
-      label: string,
-      link: string,
-    }[],
-  }[],
+  expanded?: boolean,
+  subModules?: SubModule[],
 };
+
 
 export type NavigationProps = {
   modules: Module[],
@@ -43,14 +47,16 @@ export class Navigation extends Component {
   }
 
   componentWillMount() {
+    // $FlowIgnore - typing document events is a pain!
     document.addEventListener('click', this._documentClickHandler);
   }
 
   componentWillUnmount() {
+    // $FlowIgnore - typing document events is a pain!
     document.removeEventListener('click', this._documentClickHandler);
   }
 
-  _documentClickHandler = (event) => {
+  _documentClickHandler = (event: SyntheticInputEvent) => {
     if (event.target.className.indexOf('navigation') === -1) {
       this.setState({
         expanded: false,
@@ -66,18 +72,18 @@ export class Navigation extends Component {
     }
 
     return this.setState({
-      expanded: !!this.props.modules.find(module => module.link === moduleUrl).subModuleLinks,
+      expanded: !!(this.props.modules.find(module => module.link === moduleUrl) || {}).subModules,
       expandedModuleUrl: moduleUrl,
     });
   };
 
-  _mapModules = (modules: Module[], expandedModuleUrl: string, expanded: boolean): Module[] =>
+  _mapModules = (modules: Module[], expandedModuleUrl: string, expanded: boolean): any =>
     modules.map(module => ({
       ...module,
       expanded: expanded && expandedModuleUrl === module.link,
     }));
 
-  _activeModule = (modules: Module[], expandedModuleUrl): Module =>
+  _activeModule = (modules: Module[], expandedModuleUrl: string): ?Module =>
     modules.find(module => module.link === expandedModuleUrl);
 
 
@@ -94,8 +100,7 @@ export class Navigation extends Component {
           <Motion
             defaultStyle={{ transform: 0 }}
             style={{ transform: spring(this.state.expanded ? 100 : 0) }}
-          >
-            { iStyles =>
+            children={ iStyles =>
               <div
                 style={{
                   transform: `translateY(-${100 - iStyles.transform}%)`,
@@ -106,7 +111,7 @@ export class Navigation extends Component {
                   { ...this._activeModule(this.props.modules, this.state.expandedModuleUrl) }
                 />
               </div> }
-          </Motion>
+          />
       </div>);
   }
 }

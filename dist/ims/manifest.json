@@ -1,0 +1,8 @@
+{
+  "ims.ims.map": "ims.map",
+  "ims.js": "ims.js",
+  "manifest.js": "manifest.js",
+  "manifest.manifest.map": "manifest.map",
+  "vendor.js": "vendor.js",
+  "vendor.vendor.map": "vendor.map"
+}
