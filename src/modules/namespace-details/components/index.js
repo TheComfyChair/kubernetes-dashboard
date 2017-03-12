@@ -1,16 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {
+  connectNamespacesSocketAction,
+  disconnectNamespacesSocketAction,
+} from '../sagas';
 import { selectNamespaces } from '../selectors';
 
 
-type Props = {
-  userName: string,
-}
-
-export const HelloWorld = (props: Props) =>
+export const Namespaces = () =>
   <div>
     <p>Hello world! My name is the namespace details!</p>
   </div>;
+
+
+type Props = {
+  connectNamespacesSocket: () => void,
+  disconnectNamespacesSocket: () => void;
+}
+
+export class NamespacesContainer extends Component {
+  props: Props;
+
+  componentWillMount() {
+    this.props.connectNamespacesSocket();
+  }
+
+  componentWillUnmount() {
+    this.props.disconnectNamespacesSocket();
+  }
+
+  render() {
+    return <Namespaces />;
+  }
+}
 
 
 const mapStateToProps = state => ({
@@ -18,6 +40,17 @@ const mapStateToProps = state => ({
 });
 
 
+const mapDispatchToProps = dispatch => ({
+  connectNamespacesSocket() {
+    dispatch(connectNamespacesSocketAction());
+  },
+  disconnectNamespacesSocket() {
+    dispatch(disconnectNamespacesSocketAction());
+  }
+});
+
+
 export const HelloWorldContainer = connect(
-  mapStateToProps
-)(HelloWorld);
+  mapStateToProps,
+  mapDispatchToProps
+)(NamespacesContainer);

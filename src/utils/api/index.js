@@ -13,7 +13,6 @@ export function api(options = {}) {
   });
 }
 
-
 export const wasCancelled = axios.isCancel;
 
 export const cancelToken = axios.CancelToken.source;

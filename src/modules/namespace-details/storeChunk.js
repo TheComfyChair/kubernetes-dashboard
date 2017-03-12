@@ -2,11 +2,12 @@ import { Types, buildStoreChunk } from 'redux-scc';
 import { NAMESPACES_REDUCER } from './constants';
 
 
-const userDetailsSchema = Types.reducer(Types.shape({
-  name: Types.string('react-app-skeleton, hello world 2'),
-}));
+const namespacesSchema = Types.reducer(Types.arrayOf(Types.shape({
+  name: Types.string(),
+  uid: Types.string(),
+})));
 
 
-export const { reducers, selectors, actions } = buildStoreChunk('hello-world-2', {
-  [NAMESPACES_REDUCER]: userDetailsSchema,
+export const { reducers, selectors, actions } = buildStoreChunk('namespaces', {
+  [NAMESPACES_REDUCER]: namespacesSchema,
 });
