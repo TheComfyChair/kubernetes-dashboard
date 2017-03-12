@@ -1,5 +1,5 @@
 import { Types, buildStoreChunk } from 'redux-scc';
-import { USER_DETAILS_REDUCER } from './constants';
+import { NAMESPACES_REDUCER } from './constants';
 
 
 const userDetailsSchema = Types.reducer(Types.shape({
@@ -8,5 +8,5 @@ const userDetailsSchema = Types.reducer(Types.shape({
 
 
 export const { reducers, selectors, actions } = buildStoreChunk('hello-world-2', {
-  [USER_DETAILS_REDUCER]: userDetailsSchema,
+  [NAMESPACES_REDUCER]: userDetailsSchema,
 });

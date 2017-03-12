@@ -14,8 +14,7 @@
         "utils": "/utils",
         "css": "/assets/css/",
         "images": "/assets/images",
-        "hello-world": "/modules/hello-world",
-        "hello-world-2": "modules/hello-world-2",
+        "namespace-details": "/modules/namespace-details",
         "application-root": "/modules/application-root",
         "common-ui-components": "/common-ui-components"
       },

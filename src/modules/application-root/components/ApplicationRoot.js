@@ -12,22 +12,21 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom';
-import helloWorld from 'hello-world';
-import helloWorld2 from 'hello-world-2';
+import namespaceDetails from 'namespace-details';
 import styles from './styles.scss';
 
 
 export const routerRoutes = map(({ route }) => ({
   path: route.pattern,
   component: route.components.content
-}))([helloWorld, helloWorld2]);
+}))([namespaceDetails]);
 
 
 export const navRoutes = map(module => ({
   title: module.title,
   link: module.route.link,
   clickable: module.route.clickable,
-}))([helloWorld, helloWorld2]);
+}))([namespaceDetails]);
 
 
 export const ApplicationRoot = () =>
@@ -40,7 +39,7 @@ export const ApplicationRoot = () =>
       <Route
         pattern="/"
         exact
-        component={ () => <Redirect to={ helloWorld.route.link } /> }
+        component={ () => <Redirect to={ namespaceDetails.route.link } /> }
       />
 
       <main className={ styles.content }>
